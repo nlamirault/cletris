@@ -1,0 +1,74 @@
+<page title="cletris : A Tetris like game written in Common Lisp.">
+  <p>
+    cletris is a Tetris game
+    It is developed on <a href="http://www.debian.org"> Debian GNU/Linux </a>, using 
+    <a href="http://www.sbcl.org"> SBCL </a>.
+  </p>
+  <p>
+    cletris was written
+    by <a href="mailto:nlamirault@gmail.com">Nicolas Lamirault</a> and is available 
+    under a <a href="http://www.opensource.org/licenses/mit-license.php"> MIT </a> 
+    style license.
+  </p>
+
+  <h3>Installation using asdf-install</h3>
+  <p><pre>*> (require 'asdf-install)
+*> (asdf-install:install 'cletris)</pre>
+  </p>
+
+  <h3>Manual Installation</h3>
+
+  <p>
+    Download a cletris <a href="#"> tarball</a> or
+    checkout source code from GitHub :
+    <pre> $> git clone git://github.com/nlamirault/cletris.git</pre>
+  </p>
+  <p>
+    cletris needs
+    <a href="http://www.weitz.de/cl-ppcre/">cl-ppcre</a>, 
+    <a href="http://common-lisp.net/project/pal/">pal</a>,
+    and their dependencies.
+  </p>
+  <p>
+    <a href="http://www.cliki.net/asdf">ASDF</a> is used for
+    compilation.  Register the .asd file, e.g. by symlinking it,
+    then compile cletris using <tt>asdf:operate</tt>.
+  </p>
+  <pre>$ ln -sf `pwd`/cletris.asd /path/to/your/registry/
+* (asdf:operate 'asdf:load-op :cletris)</pre>
+
+  <h3>Usage</h3>
+  <p>
+    Start Cletris using an usernane :
+    <pre>* (cletris:cletris "guest")</pre>
+  </p>
+
+  <h3>Screenshots</h3>
+  Cletris 0.3 : <br /> <img src="cletris-0.3.png" />
+
+  <h3>Support</h3>
+  Mail Nicolas Lamirault for questions, bug reports, ...
+
+  <h3>News</h3>
+  <p><b>2009-03-30</b></p>
+  <ul><li>Version 0.3 : Move code to GitHub and creates a new website.</li></ul>
+
+
+  <h3>Releases</h3>
+   <p>
+     <b>0.3</b>
+     <a href="http://cletris.googlecode.com/files/cletris-0.3.tar.gz">tgz</a>
+     <a href="http://cletris.googlecode.com/files/cletris-0.3.tar.gz.asc">asc</a>
+   </p>
+   <p>
+     <b>0.2</b>
+     <a href="http://cletris.googlecode.com/files/cletris-0.2.tar.gz">tgz</a>
+     <a href="http://cletris.googlecode.com/files/cletris-0.2.tar.gz.asc">asc</a>
+   </p>
+   <p>
+     <b>0.1</b>
+     <a href="http://cletris.googlecode.com/files/cletris-0.1.tar.gz">tgz</a>
+     <a href="http://cletris.googlecode.com/files/cletris-0.1.tar.gz.asc">asc</a>
+   </p>
+
+</page>
