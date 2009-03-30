@@ -1,0 +1,14 @@
+-------------
+-- cletris --
+-------------
+
+This is a Tetris like game in Common Lisp
+
+http://en.wikipedia.org/wiki/Tetris
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:
