@@ -1,1 +1,130 @@
-Cletris GH page
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>cletris</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+<div class="content">
+<div class="header">
+<h1>cletris</h1>
+</div>
+<div class="data">
+<div class="title">Description</div>
+
+<p><p><b>cletris</b> is a Tetris game</p>
+<p>It is developed  on <a  href="http://www.debian.org"> Debian GNU/Linux </a>.
+and licensed under a license <a href="http://opensource.franz.com/preamble.html">
+Lisp  Lesser GNU Public License </a>.
+</p>
+
+<div class="title"> Installation </div>
+cletris could be installed like this :
+<ul>
+<li> Load libraries :
+<pre>
+CL-USER> (require 'asdf)
+CL-USER> (require 'asdf-install)
+</pre>
+</li>
+<li> Install Cletris :
+<pre>
+CL-USER> (asdf-install:install 'cletris)
+</pre>
+</li>
+
+<li> Start Cletris :
+<pre>
+CL-USER> (cletris:cletris)
+</pre>
+</li>
+
+</ul>
+
+<div class="title"> Keys  </div>
+
+<ul>
+<li> s : Start a new game </li>
+<li> Left : Move the current block to the left</li>
+<li> Right : Move the current block to the right</li>
+<li> Up : Rotate the current block</li>
+<li> Down : Move the current block down </li>
+<li> Space : Move the current block all the way down.</li>
+<li> p : Pause game </li>
+<li> v : View score (when user not playing a game). </li>
+<li> q : Quit Cletris </li>
+</ul>
+</li>
+</ul>
+
+
+<div class="title"> Screenshots </div>  
+<ul>
+<li>
+0.2 <br>
+ <img src="cletris-0.2.png" width="533" height="400"> </li>
+</ul>
+
+
+
+</p>
+</div>
+<div class="data">
+<div class="title">News</div>
+<div class="level"><li>Version 0.1 [2007-07-20] : First alpha version.</li><li>Version 0.2 [2007-09-20] : Scores, points, ...</li>
+</div>
+</div>
+<div class="data">
+<div class="title">Links</div>
+<div class="level"><div><a href="http://www.cliki.net">Cliki</a></div><div><a href="http://www.common-lisp.net">commons-lisp.net</a></div><div><a href="http://common-lisp.net/project/pal/">PAL</a></div>
+</div>
+</div>
+<div class="data">
+<div class="title">Team</div>
+
+<div class="level"> List of developers : 
+<div>Nicolas Lamirault - <a href="mailto:nicolas.lamirault@gmail.com">nicolas.lamirault@gmail.com</a></div>
+
+</div>
+</div>
+<div class="data">
+<div class="title">Mailing Lists</div>
+
+<div class="level"> Mailing lists that have been established for this project : 
+
+</div>
+</div>
+<div class="data">
+<div class="title">Repository</div>
+<div class="level"><div>NIL <a href="NIL">NIL</a></div>
+</div>
+</div><div class="data">
+<div class="title">Releases</div>
+<div class="level"><div>0.2 <a href="dists/cletris-0.2.tar.gz">cletris-0.2</a></div><div>0.1 <a href="dists/cletris-0.1.tar.gz">cletris-0.1</a></div>
+</div>
+</div>
+<div></div>
+<div class="footer">
+<div class="date">Last updated: 14:51:24 of Thursday, 9/20/2007 (GMT+1)</div>
+<div class="common-lisp-link">
+Back to <a href="http://common-lisp.net/">Common-lisp.net</a>.</div>
+<div class="check"><a href="http://validator.w3.org/check/referer">Valid XHTML 1.0 Strict</a></div>
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4190576-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+</body>
+</html>
