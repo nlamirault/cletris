@@ -1,16 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>cletris : A Tetris like game written in Common Lisp.</title>
-<link rel="stylesheet" type="text/css" href="index.css">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-<body style="width: 100%">
-<div id="header"><table cellspacing="0" cellpadding="0" width="100%"><tr>
-<td width="10"></td>
-<td valign="center"><b>cletris : A Tetris like game written in Common Lisp.</b></td>
-</tr></table></div>
-<div id="homepage" class="main">
+<page title="cletris : A Tetris like game written in Common Lisp.">
   <p>
     cletris is a Tetris game
     It is developed on <a href="http://www.debian.org"> Debian GNU/Linux </a>, using 
@@ -24,8 +12,8 @@
   </p>
 
   <h3>Installation using asdf-install</h3>
-  <p><pre>*&gt; (require 'asdf-install)
-*&gt; (asdf-install:install 'cletris)</pre>
+  <p><pre>*> (require 'asdf-install)
+*> (asdf-install:install 'cletris)</pre>
   </p>
 
   <h3>Manual Installation</h3>
@@ -33,7 +21,7 @@
   <p>
     Download a cletris <a href="#"> tarball</a> or
     checkout source code from GitHub :
-    <pre> $&gt; git clone git://github.com/nlamirault/cletris.git</pre>
+    <pre> $> git clone git://github.com/nlamirault/cletris.git</pre>
   </p>
   <p>
     cletris needs
@@ -56,7 +44,7 @@
   </p>
 
   <h3>Screenshots</h3>
-  Cletris 0.3 : <br> <img src="cletris-0.3.png">
+  Cletris 0.3 : <br /> <img src="cletris-0.3.png" />
 
   <h3>Support</h3>
   Mail Nicolas Lamirault for questions, bug reports, ...
@@ -87,6 +75,4 @@
      <a href="http://cletris.googlecode.com/files/cletris-0.1.tar.gz.asc">asc</a>
    </p>
 
-</div>
-</body>
-</html>
+</page>
