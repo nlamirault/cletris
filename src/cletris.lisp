@@ -1,19 +1,3 @@
-;;;; -*- Mode: LISP; Syntax: ANSI-Common-Lisp; Base: 10 -*-
-
-;;;; *************************************************************************
-;;;; FILE IDENTIFICATION
-;;;;
-;;;; Name:          cletris.lisp
-;;;; Purpose:       A Tetris game.
-;;;; Programmer:    Nicolas Lamirault <nicolas.lamirault@gmail.com>
-;;;;
-;;;; This file, part of cletris, is Copyright (c) 2007 by Nicolas Lamirault
-;;;;
-;;;; cletris users are granted the rights to distribute and use this software
-;;;; as governed by the terms of the Lisp Lesser GNU Public License
-;;;; (http://opensource.franz.com/preamble.html), also known as the LLGPL.
-;;;;
-;;;; *************************************************************************
 
 
 (in-package :cletris)
@@ -22,8 +6,6 @@
 (eval-when (:compile-toplevel :load-toplevel :execute)
   #+:sbcl
   (setf *random-state* (make-random-state t)))
-
-
 
 ;; From Hunchentoot
 (defun iso-time (&optional (time (get-universal-time)))
@@ -142,7 +124,7 @@ Return a list of the 10 best scores."
                           (pal:v (+ x 18) y)
                           (pal:v (+ x 18) (+ y 18))
                           (pal:v x (+ y 18)))
-                    r g b                                  
+                    r g b
                     255))
 
 
@@ -186,7 +168,7 @@ the NEXT-BLOCK. LINES and LEVEL is for the user."
   (when next-block
     (pal:draw-text "Next" (pal:v 500 110))
     (draw-block next-block 15 8)))
-  
+
 
 (defun in-area-p (matrix block block-x block-y key)
   "Check if the current BLOCK is in the area.
@@ -203,7 +185,7 @@ KEY is :left or :right."
                       (or (< y 0)
                           (> x 9)
                           (< x 0)
-                          (not (listp (aref matrix y x)))) 
+                          (not (listp (aref matrix y x))))
                       (cond ((equal :left key)
                              (let ((new-x (1- x)))
                                (and (>= new-x 0)
@@ -399,12 +381,10 @@ Return the new BLOCK-X."
 (defgeneric delete-line (game number)
   (:documentation "Handler for when a a game-client delete a line."))
 
-
 (defmethod delete-line ((game game) number)
-  )
+  (format t "Delete line"))
 
 
-;;(defun cletris (username &optional client)
 (defun cletris (username &optional game)
   "Start a new Tetris game.
 USERNAME could be used for the user name in a network session."
@@ -428,7 +408,7 @@ USERNAME could be used for the user name in a network session."
         (pal:event-loop ()
           (case state
             (:ready
-             (pal:test-keys            
+             (pal:test-keys
                (:key-a (display-about))
                (:key-v (display-scores))
                (:key-s (setf block (get-block rs)
@@ -463,7 +443,7 @@ USERNAME could be used for the user name in a network session."
             (incf frame-count)
             (when (> frame-count *speed*)
               (when *debug*
-                (format t "~&Frame > speed ~A ~A" frame-count *speed*))
+                (format t "~&Frame > speed ~AÂ ~A" frame-count *speed*))
               (setf frame-count 0)
               (let ((area-p (in-area-p matrix block block-x block-y :down)))
                 (when *debug*
@@ -478,11 +458,8 @@ USERNAME could be used for the user name in a network session."
                                        (* 10 (1+ level))))
                           (decf *speed*)
                           (incf level))
-;;                         (when (and networked
-;;                                    (> nb 1))
-;;                           (delete-line-request client (1- nb)))
-                        (when (> nb 1)
-                          (delete-line game (1- nb)))
+                        ;; (when (> nb 1)
+                        ;;   (delete-line game (1- nb)))
                         (if (<= block-y 2)
                             (progn
                               (finish-game lines level points)
@@ -506,6 +483,3 @@ USERNAME could be used for the user name in a network session."
             (format t "~&Frame ~A" frame-count))
           (draw-game matrix block next-block block-x block-y
                      lines level points username))))))
-
-
-
