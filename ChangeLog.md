@@ -1,6 +1,13 @@
 Cletris ChangeLog
 =================
 
+Version 0.3 (2013-12-08)
+------------------------
+
+- Update documentation
+- Add TravisCI configuration
+- FIX Build using Quicklisp
+
 Version 0.2 (2007-09-20)
 ------------------------
 
