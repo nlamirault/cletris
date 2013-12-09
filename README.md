@@ -9,21 +9,26 @@ This is the classic [Tetris](http://en.wikipedia.org/wiki/Tetris) game in Common
 
 You will need :
 
-* [ASDF](http://www.cliki.net/asdf)
-* [PAL](http://common-lisp.net/project/pal)
+* [SBCL](http://www.sbcl.org)
+* [Quicklisp](http://www.quicklisp.org)
+
+and dependencies :
+
+    $ sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev
 
 ## Installation
 
-In /usr/share/common-lisp/systems, create a symbolic link
-to the system definition file (cletris.asd) or
-add the ernestine directory to *central-directory* of ASDF :
-
-    CL-USER> (push "/directory/cletris/" asdf:*central-registry*)
-    CL-USER> (asdf:operate 'asdf:load-op 'cletris)
+    CL-USER> (ql:quickload "cletris")
 
 ## Launch game
 
-    CL-USER> (cletris:cletris)
+In a lisp REPL :
+
+    CL-USER> (cletris:cletris "myusername")
+
+or from shell:
+
+    $ ./cletris.sh
 
 
 ## Commands
