@@ -17,4 +17,5 @@ cd $TEST_ENV
 wget -q http://beta.quicklisp.org/quicklisp.lisp -O quicklisp.lisp
 sbcl --script init.lisp
 ln -s $PWD/.. ./.quicklisp/local-projects/cletris
-sbcl --script ../misc/game.lisp
+cd ..
+sbcl --script cletris-ci.lisp

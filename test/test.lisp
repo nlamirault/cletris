@@ -10,4 +10,5 @@
 (defparameter *d*
   (cletris::cletris-client "nicolas" "127.0.0.1" 9886 "127.0.0.1" 9888))
 
+(cletris:cletris "unittest")
 
