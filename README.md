@@ -1,7 +1,7 @@
 Cletris
 =======
 
-[![Build Status](https://travis-ci.org/nlamirault/cletris.png)](https://travis-ci.org/nlamirault/cletris)
+[![Build Status](http://img.shields.io/travis/nlamirault/cletris.svg)](https://travis-ci.org/nlamirault/cletris)
 
 This is the classic [Tetris](http://en.wikipedia.org/wiki/Tetris) game in Common Lisp.
 
