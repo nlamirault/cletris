@@ -1,4 +1,5 @@
 image: base
 script:
-    - sudo apt-get install sbcl
+    - sudo apt-get update
+    - sudo apt-get install sbcl libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev
     - ./ci/cl-cletris-ci.sh
