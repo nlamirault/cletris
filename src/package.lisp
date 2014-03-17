@@ -1,20 +1,18 @@
 ;;;; -*- Mode: LISP; Syntax: ANSI-Common-Lisp; Base: 10 -*-
+;; Copyright (C) 2014  Nicolas Lamirault
 
-;;;; *************************************************************************
-;;;; FILE IDENTIFICATION
-;;;;
-;;;; Name:          package.lisp
-;;;; Purpose:       Package file for Cletris.
-;;;; Programmer:    Nicolas Lamirault <nicolas.lamirault@gmail.com>
-;;;;
-;;;; This file, part of cletris, is Copyright (c) 2007 by Nicolas Lamirault
-;;;;
-;;;; cletris users are granted the rights to distribute and use this software
-;;;; as governed by the terms of the Lisp Lesser GNU Public License
-;;;; (http://opensource.franz.com/preamble.html), also known as the LLGPL.
-;;;;
-;;;; *************************************************************************
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (defpackage :cletris
   (:use :cl)
@@ -23,4 +21,3 @@
 
            #:*debug*
            ))
-
