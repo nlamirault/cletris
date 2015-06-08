@@ -1,7 +1,24 @@
-script: ./ci/cletris-ci.sh
-before_install:
-    - sudo apt-get update
-    - sudo apt-get install sbcl
-    - sudo apt-get install libsdl1.2-dev
-    - sudo apt-get install libsdl-image1.2-dev
-    - sudo apt-get install libsdl-mixer1.2-dev
+language: common-lisp
+sudo: required
+
+env:
+  matrix:
+    - LISP=sbcl
+
+install:
+  - sudo apt-get update
+  - sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev
+  # Install cl-travis
+  - curl https://raw.githubusercontent.com/luismbo/cl-travis/master/install.sh | bash
+  # Coveralls support
+  - git clone https://github.com/fukamachi/cl-coveralls ~/lisp/cl-coveralls
+
+script:
+  - cl -l cl-coveralls
+       -e '(ql:quickload :cletris)'
+       -e '(setq lisp-unit:*print-failures* t)
+       -e '(setq lisp-unit:*print-errors* t)'
+       -e '(setq lisp-unit:*print-summary* t)'
+       -e '(coveralls:with-coveralls (:exclude (list "t")
+              (ql:quickload :cletris-test)
+              (lisp-unit:run-tests :all :cletris-test)'
