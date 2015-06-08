@@ -16,9 +16,3 @@ install:
 script:
   - cl -l cl-coveralls
        -e '(ql:quickload :cletris)'
-       -e '(setq lisp-unit:*print-failures* t)'
-       -e '(setq lisp-unit:*print-errors* t)'
-       -e '(setq lisp-unit:*print-summary* t)'
-       -e '(coveralls:with-coveralls (:exclude (list "t"))
-              (ql:quickload :cletris-test)
-              (lisp-unit:run-tests :all :cletris-test))'
