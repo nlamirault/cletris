@@ -1,0 +1,13 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(push *default-pathname-defaults* asdf:*central-registry*)
+
+(ql:quickload :cletris :slient t)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (cletris:cletris "guest"))
