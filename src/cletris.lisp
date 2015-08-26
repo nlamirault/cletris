@@ -1,4 +1,4 @@
-;; Copyright (C) 2014  Nicolas Lamirault
+;; Copyright (C) 2014, 2015  Nicolas Lamirault
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -33,8 +33,7 @@
   "Get the home directory of Cletris."
   (let ((directory (concatenate 'string
                                 (sb-ext:posix-getenv "HOME")
-                                "/"
-                                ".cletris/")))
+                                "/.config/cletris")))
     (ensure-directories-exist directory)))
 
 
@@ -43,13 +42,15 @@
   (with-open-file (stream (concatenate 'string
                                        (get-cletris-directory)
                                        "scores.txt")
-                          :direction :input)
+                          :direction :input
+                          :if-does-not-exist nil)
+    (when (streamp stream)
       (loop for line = (read-line stream nil nil)
-         until (null line)
-         as data = (cl-ppcre:split ";" line)
-         collect (list (parse-integer (first data))
-                       (second data)
-                       (third data)))))
+            until (null line)
+            as data = (cl-ppcre:split ";" line)
+            collect (list (parse-integer (first data))
+                          (second data)
+                          (third data))))))
 
 
 (defun write-scores (scores)
