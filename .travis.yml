@@ -9,7 +9,7 @@ env:
     - ROSWELL_BRANCH=master
   matrix:
     - LISP=sbcl-bin
-    - LISP=ccl-bin
+    # - LISP=ccl-bin
 
 #addons:
 #  apt:
