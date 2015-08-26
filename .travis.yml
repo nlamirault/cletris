@@ -41,5 +41,5 @@ before_script:
 script:
     # - cl -e '(ql:quickload :clacman)'
     - qlot install :cletris
-    - cd quicklisp/local-projects/ && ln -s ../../*.asd . && cd ../../
+    - ln -sf `pwd`/*.asd  quicklisp/local-projects/
     - qlot exec run-prove cletris-test.asd
