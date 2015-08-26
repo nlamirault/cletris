@@ -1,18 +1,45 @@
 language: common-lisp
 sudo: required
+# sudo: false
 
 env:
+  global:
+    - PATH=~/.roswell/bin:$PATH
+    - ROSWELL_INSTALL_DIR=$HOME/.roswell
+    - ROSWELL_BRANCH=master
   matrix:
-    - LISP=sbcl
+    - LISP=sbcl-bin
+    # - LISP=ccl-bin
+
+#addons:
+#  apt:
+#    packages:
+#      - libsdl1.2-dev
+#      - libsdl-image1.2-dev
+#      - libsdl-mixer1.2-dev
 
 install:
   - sudo apt-get update
   - sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev
   # Install cl-travis
-  - curl https://raw.githubusercontent.com/luismbo/cl-travis/master/install.sh | bash
-  # Coveralls support
-  - git clone https://github.com/fukamachi/cl-coveralls ~/lisp/cl-coveralls
+  # - curl https://raw.githubusercontent.com/luismbo/cl-travis/master/install.sh | bash
+  # Install Roswell
+  - curl -L https://raw.githubusercontent.com/snmsts/roswell/$ROSWELL_BRANCH/scripts/install-for-ci.sh | sh
+  - ros -e '(ql:update-all-dists :prompt nil)'
+  - ros install qlot
+  - ros install prove
+
+cache:
+  directories:
+    - $HOME/.roswell
+    - $HOME/.config/common-lisp
+
+before_script:
+  - ros --version
+  - ros config
 
 script:
-  - cl -l cl-coveralls
-       -e '(ql:quickload :cletris)'
+    # - cl -e '(ql:quickload :clacman)'
+    - qlot install :cletris
+    - ln -sf `pwd`/*.asd  quicklisp/local-projects/
+    - qlot exec run-prove cletris-test.asd

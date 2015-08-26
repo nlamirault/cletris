@@ -1,5 +1,9 @@
 # Cletris ChangeLog
 
+## Version 0.7.0 (08/26/2015)
+
+- Update TravisCI build
+
 ## Version 0.6.0 (08/26/2015)
 
 - Update build chain

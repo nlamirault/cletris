@@ -8,6 +8,22 @@ exec ros -Q -- $0 "$@"
 
 (ql:quickload :cletris :slient t)
 
-(defun main (&rest argv)
-  (declare (ignorable argv))
-  (cletris:cletris "guest"))
+(defun help ()
+  (format t "~&Usage:
+
+cletris --user foo
+
+Options :
+    --user : name of the current user
+"
+          ))
+
+
+
+(defun main (&rest args)
+  (when (or (null args)
+            (equal (first args) "--help")
+            (null (second args)))
+    (help)
+    (uiop:quit -1))
+  (cletris:cletris (second args)))
