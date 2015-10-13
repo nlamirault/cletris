@@ -18,7 +18,7 @@
 (in-package :cletris-test)
 
 
-(plan 0)
+(plan 2)
 
 (is (format nil "~A/.config/cletris"
             (sb-ext:posix-getenv "HOME"))
@@ -26,7 +26,5 @@
 
 
 (is nil (cletris::read-scores))
-
-
 
 (finalize)

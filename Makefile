@@ -33,21 +33,21 @@ help:
 
 .PHONY: init
 init:
-	@echo -e "$(OK_COLOR)[climon] Install dependencies$(NO_COLOR)"
+	@echo -e "$(OK_COLOR)[cletris] Install dependencies$(NO_COLOR)"
 	@curl -L https://raw.githubusercontent.com/snmsts/roswell/$(ROSWELL_BRANCH)/scripts/install-for-ci.sh | sh
 	@ros install qlot
 
 .PHONY: deps
 deps:
-	@qlot install :climon
+	@qlot install :cletris
 	@ln -sf `pwd`/*.asd  quicklisp/local-projects/
 
 .PHONY: test
 test:
-	@echo -e "$(OK_COLOR)[climon] Launch unit tests$(NO_COLOR)"
-	@qlot exec run-prove climon-test.asd
+	@echo -e "$(OK_COLOR)[cletris] Launch unit tests$(NO_COLOR)"
+	@qlot exec run-prove cletris-test.asd
 
 .PHONY: binary
 binary:
-	@echo -e "$(OK_COLOR)[climon] Build binary$(NO_COLOR)"
-	@ros build roswell/climon.ros
+	@echo -e "$(OK_COLOR)[cletris] Build binary$(NO_COLOR)"
+	@ros build roswell/cletris.ros
