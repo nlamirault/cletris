@@ -1,5 +1,10 @@
 # Cletris ChangeLog
 
+## Version 0.8.0 (10/13/2015)
+
+- Setup CircleCI
+- Cleanup documentation
+
 ## Version 0.7.0 (08/26/2015)
 
 - Update TravisCI build
