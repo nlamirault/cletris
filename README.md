@@ -2,6 +2,7 @@ Cletris
 =======
 
 [![License MIT][badge-license]][LICENSE]
+[![GitHub version](https://badge.fury.io/gh/nlamirault%2Fcletris.svg)](https://badge.fury.io/gh/nlamirault%2Fcletris)
 
 Master :
 * [![Circle CI](https://circleci.com/gh/nlamirault/cletris/tree/master.svg?style=svg)](https://circleci.com/gh/nlamirault/cletris/tree/master)
