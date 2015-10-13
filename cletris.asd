@@ -17,7 +17,7 @@
   :name "cletris"
   :author "Nicolas Lamirault <nicolas.lamirault@gmail.com>"
   :maintainer "Nicolas Lamirault <nicolas.lamirault@gmail.com>"
-  :version "0.7.0"
+  :version "0.9.0"
   :licence "MIT License"
   :description "A tetris game."
   :depends-on (:pal :cl-ppcre) ;; :usocket :cl-log)
