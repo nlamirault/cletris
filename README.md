@@ -1,8 +1,6 @@
 Cletris
 =======
 
-[![Build Status](http://img.shields.io/travis/nlamirault/cletris.svg)](https://travis-ci.org/nlamirault/cletris)
-
 [![License MIT][badge-license]][LICENSE]
 
 Master :
