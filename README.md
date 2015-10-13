@@ -26,18 +26,18 @@ and dependencies :
 
 ## Installation
 
-    CL-USER> (ql:quickload "cletris")
+* Install tools and dependencies :
 
-## Launch game
+        $ make init
+        $ make deps
 
-In a lisp REPL :
+* Make binary :
 
-    CL-USER> (cletris:cletris "myusername")
+        $ make binary
 
-or from shell:
+* Launch game :
 
-    $ ./cletris.sh
-
+        $ roswell/cletris
 
 ## Commands
 
